@@ -1,7 +1,0 @@
-flask
-python-dotenv
-ipykernel
-torch
-pillow
-transformers
-openai
