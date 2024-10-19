@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-5">
+            <form action="{{ url_for('interaction_1') }}" method="post">
+                <label for="formFile" class="form-label">In short sentence, describe your current mood</label>
+                <input class="form-control" id="formFile" type="text" name="emotion">
+                <br>
+                <button type="submit" class="btn btn-primary">Generate My Poem</button>
+            </form>
+            <br>
+        </div>
+
+        <div class="col-1"><br></div>
+
+        <div class="col-6">
+          <p><strong>A poem generated based on your emotion:</strong></p>
+            <p id="poemID">{% if poem %}{{ poem|safe }}{% else %}Waiting for the poem...{% endif %}</p>
+            <!-- Audio player for the generated music -->
+            {% if music_file %}
+                <p><strong>Your Generated Music:</strong></p>
+                <audio controls>
+                    <source src="{{ url_for('download_file', filename=music_file) }}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                <br>
+            {% else %}
+                <p>Waiting for the generated music...</p>
+            {% endif %}
+            <br>
+            
+        </div>
+    </div>
+</div>
+
+<script src="js/sketch-m1.js"></script>
+{% endblock %}

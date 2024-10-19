@@ -1,0 +1,90 @@
+/* Reset margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Main container styles */
+.container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* Center-aligns text within the container */
+}
+
+/* Input section */
+.input-section {
+    margin-bottom: 30px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Button styles */
+button.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Poem and music output section */
+.output-section {
+    margin-top: 40px;
+}
+
+p#poemID {
+    background-color: #ffebcd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+    min-height: 100px;
+}
+
+/* Audio player styling */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
