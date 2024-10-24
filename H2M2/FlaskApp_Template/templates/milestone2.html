@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-5">
+            <form action="{{ url_for('interaction_2') }}" method="post">
+                <label for="formFile" class="form-label">In short sentence, describe your current mood</label>
+                <textarea class="form-control" id="formFile" type="text" rows = "5" cols = "60" name = "emotion"></textarea><br>
+                <button type="button" class="btn btn-secondary">Generate Random Mood</button>
+                <br>
+                <label for="formFile" class="form-label">Provide a desired theme with a word or a phrase</label>
+                <input class="form-control" id="formFile" type="text" name="poemTheme">
+                <br>
+                <label for="formFile" class="form-label">Select Music Genre:</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio1" value="Rock" checked>
+                    <label class="form-check-label" for="inlineRadio1">Rock</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio2" value="Classical">
+                    <label class="form-check-label" for="inlineRadio2">Classical</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio3" value="EDM">
+                    <label class="form-check-label" for="inlineRadio3">EDM</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio4" value="Jazz">
+                    <label class="form-check-label" for="inlineRadio4">Jazz</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio5" value="Country">
+                    <label class="form-check-label" for="inlineRadio5">Country</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="musicRadioOptions" id="inlineRadio6" value="Hip hop">
+                    <label class="form-check-label" for="inlineRadio6">Hip hop</label>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Generate My Poem and My Music</button>
+            </form>
+            <br>
+        </div>
+
+        <div class="col-1"><br></div>
+
+        <div class="col-6">
+          <div class="info-container">
+            <div class="info-box">
+                <p><strong>Inputted emotion: <br></strong>{{text_emotion}}</p>
+            </div>
+          </div>
+          <div class="info-container">
+            <div class="info-box">
+                <p><strong>Inputted theme: <br></strong>{{text_theme}}</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Selected music genre: <br></strong>{{music_style}}</p>
+            </div>
+          </div>
+
+          <div class="output-section">
+            <p class="output-heading"><strong>A poem generated based on your emotion:</strong></p>
+            <p id="poemID">{% if poem %}{{ poem|safe }}{% else %}Waiting for the poem...{% endif %}</p>
+
+            {% if music_file %}
+                <p class="output-heading"><strong>Your Generated Music:</strong></p>
+                <audio controls>
+                    <source src="{{ url_for('download_file', filename=music_file) }}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            {% else %}
+                <p>Waiting for the generated music...</p>
+            {% endif %}
+          </div>
+
+          <br>
+            
+        </div>
+    </div>
+</div>
+
+<script src="js/sketch-m2.js"></script>
+{% endblock %}
