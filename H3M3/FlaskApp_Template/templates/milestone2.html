@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-5">
+            <form action="{{ url_for('interaction_2') }}" method="post">
+                <label for="formFile" class="form-label">Write the math problem below:</label>
+                <textarea class="form-control" id="formFile" type="text" rows = "5" cols = "60" name = "story"></textarea><br>
+                <button type="button" class="btn btn-secondary">Random Problem</button>
+                <br>
+                <label for="formFile" class="form-label">Persona</label>
+                <textarea class="form-control" id="formFile" type="text" rows = "5" cols = "60" name = "storyTheme"></textarea><br>
+                <br>
+                <button type="submit" class="btn btn-primary">Rephrase Problem!</button>
+            </form>
+            <br>
+        </div>
+
+        <div class="col-1"><br></div>
+
+        <div class="col-6">
+          <div class="info-container">
+            <div class="info-box">
+                <p><strong>Inputted problem: <br></strong>{{text_story}}</p>
+            </div>
+          </div>
+          <div class="info-container">
+            <div class="info-box">
+                <p><strong>Inputted persona: <br></strong>{{text_theme}}</p>
+            </div>
+          </div>
+
+          <div class="output-section">
+            <p class="output-heading"><strong>Rephrased problem based on persona:</strong></p>
+            <p id="storyID">{% if story %}{{ story|safe }}{% else %}Waiting for the problem...{% endif %}</p>
+            
+            <div id="startBtnDiv"></div>
+            <div id="stopBtnDiv"></div>
+          </div>
+
+          <br>
+            
+        </div>
+    </div>
+</div>
+
+<script src="js/sketch-m2.js"></script>
+{% endblock %}

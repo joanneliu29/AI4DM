@@ -1,0 +1,180 @@
+/* Reset margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Main container styles */
+.container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Form section with colorful background */
+.form-section {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Input group for emotion input and button */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input.form-control {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Button styles */
+button.btn {
+    background-color: #007bff;
+    width: 100%;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Add margin to create space below the button */
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}
+
+button.btn-full-width {
+    width: 100%;
+}
+
+/* Poem and music output section */
+.output-section {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #007bff; /* Add a blue border for emphasis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.output-heading {
+    font-size: 1.2rem; /* Increase font size for headings */
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p#poemID {
+    background-color: #ffebcd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+    min-height: 100px;
+}
+
+/* Audio player styling */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Music genre options styling */
+.form-check {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    position: relative;
+}
+
+.form-check-inline {
+    display: inline-block; /* Ensure inline display */
+    vertical-align: middle; /* Align vertically in the middle */
+}
+
+.form-check-input {
+    display: none;
+}
+
+.form-check-label {
+    font-size: 1rem;
+    color: #2c3e50;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-check-input:checked + .form-check-label {
+    font-weight: bold;
+    background-color: rgba(0, 123, 255, 0.4);
+    border-radius: 5px;
+}
+
+.form-check-input:checked + .form-check-label::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.form-check:hover {
+    border-color: #007bff;
+}
+
+/* Info container styling */
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.info-box {
+    background-color: #dbecff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    text-align: left;
+}
